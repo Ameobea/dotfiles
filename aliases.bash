@@ -8,6 +8,10 @@ alias la="l -a"
 alias ll="l"
 alias path="echo $PATH | tr : '\n'"
 alias 2dotfiles="cd ~/dotfiles"
+alias cb="cargo build"
+alias cr="cargo run"
+alias cdoc="cargo rustdoc --open -- --no-defaults --passes collapse-docs --passes unindent-comments --passes strip-priv-imports"
+
 function mkcd {
   mkdir $1
   cd $1
@@ -45,7 +49,6 @@ function ne { # bundle exec for node
 }
 
 # gpg
-
 gpg() {
   if [[ $@ == "--list-private-keys" ]]; then
     command gpg --list-secret-keys
