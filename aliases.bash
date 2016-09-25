@@ -11,7 +11,7 @@ alias 2dotfiles="cd ~/dotfiles"
 alias cb="cargo build"
 alias cr="cargo run"
 alias cdoc="cargo rustdoc --open -- --no-defaults --passes collapse-docs --passes unindent-comments --passes strip-priv-imports"
-alias nightlies="curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --uninstall"
+alias nightlies="curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly"
 
 function mkcd {
   mkdir $1
