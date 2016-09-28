@@ -8,10 +8,15 @@ alias la="l -a"
 alias ll="l"
 alias path="echo $PATH | tr : '\n'"
 alias 2dotfiles="cd ~/dotfiles"
+
+# Rust
 alias cb="cargo build"
 alias cr="cargo run"
 alias cdoc="cargo rustdoc --open -- --no-defaults --passes collapse-docs --passes unindent-comments --passes strip-priv-imports"
 alias nightlies="curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly"
+
+# Misc
+alias ogv2mp4="avconv -i out.ogv -c:v libx264 -preset veryslow -qp 0 -vf scale=\"1280:trunc(ow/a/2)*2\" -c:a libmp3lame -qscale:a 3 -ac 2 out.mp4"
 
 function mkcd {
   mkdir $1
