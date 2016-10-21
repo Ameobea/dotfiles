@@ -31,6 +31,13 @@ perfukfunc() {
 }
 alias perfuk=perfukfunc
 
+# Osu
+osufunc() {
+env WINEDEBUG=-all WINEPREFIX='/home/casey/Wine Prefixes/osu!' wine '/home/casey/Wine Prefixes/osu!/drive_c/users/casey/Local Settings/Application Data/osu!/osu!.exe'
+}
+alias osu=osufunc
+alias 2osu="cd /home/casey/Wine\ Prefixes/osu\!/drive_c/users/casey/Local\ Settings/Application\ Data/osu\!/Songs/"
+
 function mkcd {
   mkdir $1
   cd $1
