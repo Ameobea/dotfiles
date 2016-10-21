@@ -5,6 +5,7 @@ export PATH="/usr/local/bin:$PATH"
 
 # sources
 source ~/.aliases.bash
+source ~/.cargo/env
 
 function setbg {
   export PROMPT_BG_COLOR=$1

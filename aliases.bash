@@ -26,6 +26,7 @@ alias asmcomp=asmcompfunc
 # Misc
 alias ogv2mp4="avconv -i out.ogv -c:v libx264 -preset veryslow -qp 0 -vf scale=\"1280:trunc(ow/a/2)*2\" -c:a libmp3lame -qscale:a 3 -ac 2 out.mp4"
 alias frkb="sudo dpkg-reconfigure keyboard-configuration"
+
 perfukfunc() {
   perf stat -e instructions:u,instructions:k $1
 }
