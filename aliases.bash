@@ -32,6 +32,11 @@ perfukfunc() {
 }
 alias perfuk=perfukfunc
 
+gdrive_find_func() {
+  gdrive list --query "name contains '$1'"
+}
+alias gdrive_find=gdrive_find_func
+
 # Osu
 osufunc() {
 env WINEDEBUG=-all WINEPREFIX='/home/casey/Wine Prefixes/osu!' wine '/home/casey/Wine Prefixes/osu!/drive_c/users/casey/Local Settings/Application Data/osu!/osu!.exe'
@@ -42,16 +47,6 @@ alias 2osu="cd /home/casey/Wine\ Prefixes/osu\!/drive_c/users/casey/Local\ Setti
 function mkcd {
   mkdir $1
   cd $1
-}
-
-function op {
-  open http://$1
-}
-function swap {
-  local TMPFILE=tmp.$$
-  mv "$1" $TMPFILE
-  mv "$2" "$1"
-  mv $TMPFILE "$2"
 }
 
 # Misspellings aliases
