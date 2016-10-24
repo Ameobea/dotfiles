@@ -44,4 +44,7 @@ _complete_ssh_hosts ()
         return 0
 }
 complete -F _complete_ssh_hosts ssh
-export PATH="$HOME/.rbenv/bin:$PATH"
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+rbenv init -
