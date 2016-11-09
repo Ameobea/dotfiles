@@ -27,7 +27,7 @@ alias ogv2mp4="avconv -i out.ogv -c:v libx264 -preset veryslow -qp 0 -vf scale=\
 alias frkb="sudo dpkg-reconfigure keyboard-configuration"
 
 calcfunc() {
-  echo "$@" | bc
+  echo "$@" | bc -l
 }
 alias calc=calcfunc
 
