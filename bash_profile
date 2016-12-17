@@ -2,6 +2,7 @@
 export PATH
 export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
+export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 
 # sources
 source ~/.aliases.bash
