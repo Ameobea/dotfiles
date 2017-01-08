@@ -3,7 +3,10 @@ export PATH
 export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="~/.local/bin:$PATH"
+
+# Misc exports
 export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+export rvmsudo_secure_path=0
 
 # sources
 source ~/.aliases.bash
