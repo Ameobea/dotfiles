@@ -12,6 +12,7 @@ export rvmsudo_secure_path=0
 source ~/.aliases.bash
 source ~/.cargo/env
 source ~/.profile
+source ~/dotfiles/git-completion.bash
 
 function setbg {
   export PROMPT_BG_COLOR=$1
