@@ -31,6 +31,11 @@ calcfunc() {
 }
 alias calc=calcfunc
 
+# youtubed-dl shorthand mp3 download
+ytmp3fn() {
+  youtube-dl --extract-audio --audio-format mp3 $1
+}
+alias ytmp3=ytmp3fn
 
 # mount ssd iso
 ssdmountfunc() {
