@@ -16,3 +16,4 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 " set up rust integration
 NeoBundle 'rust-lang/rust.vim'
+call neobundle#end()
