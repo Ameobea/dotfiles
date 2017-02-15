@@ -14,11 +14,22 @@ set mouse=a
 " turn on line numbers
 set number
 
+set clipboard+=unnamed  " use the clipboards of vim and win
+set paste               " Paste from a windows or from vim
+set go+=a               " Visual selection automatically copied to the clipboard
+
 " start nerdtree automatically if no files were selected
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" easily hide/show nerdtree, syncing it to all tabs
+map <F2> :NERDTreeTabsToggle<CR>
 
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+" Show syntax rules under cursor
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 "NeoBundle Scripts-----------------------------
 if has('vim_starting')
@@ -37,6 +48,7 @@ NeoBundle 'jistr/vim-nerdtree-tabs'
 " Indention markers
 NeoBundle 'Indent-Guides'
 " jsx syntax for vim
+NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 " Some stuff I left in from the default neobundle installation
 NeoBundle 'Shougo/neosnippet.vim'
