@@ -31,6 +31,26 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
+" Go to beginning of line with ctrl+a
+map  <C-a> g0
+imap <C-a> <C-O>g0<CR>
+
+" close current buffer easily
+map <C-w> :q<CR>
+
+" Toggle line comment with control+slash
+vmap <C-_> <Plug>NERDCommenterToggle
+nmap <C-_> <Plug>NERDCommenterToggle
+
+" evil software...
+" inoremap <C-_> <C-O><Plug>NERDCommenterToggle<CR>
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
 "NeoBundle Scripts-----------------------------
 if has('vim_starting')
   set runtimepath+=~/.config/nvim/bundle/neobundle.vim/
@@ -47,8 +67,16 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'jistr/vim-nerdtree-tabs'
 " Indention markers
 NeoBundle 'Indent-Guides'
-" jsx syntax for vim
+" Hilight matching tags
+NeoBundle 'valloric/MatchTagAlways'
+" easily comment lines
+NeoBundle 'scrooloose/nerdcommenter'
+" Auto close HTML tags
+NeoBundle 'alvan/vim-closetag'
 NeoBundle 'pangloss/vim-javascript'
+" ES7 plugin
+NeoBundle 'othree/yajs.vim'
+
 NeoBundle 'mxw/vim-jsx'
 " Some stuff I left in from the default neobundle installation
 NeoBundle 'Shougo/neosnippet.vim'
