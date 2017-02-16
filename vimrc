@@ -36,7 +36,19 @@ map  <C-a> g0
 imap <C-a> <C-O>g0<CR>
 
 " close current buffer easily
-map <C-w> :q<CR>
+" map <C-w> :q<CR>
+
+" syntastic "new user" recommended settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['flow', 'eslint']
 
 " Toggle line comment with control+slash
 vmap <C-_> <Plug>NERDCommenterToggle
@@ -51,6 +63,9 @@ let g:NERDTrimTrailingWhitespace = 1
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
+" make backspace act sanely
+set backspace=indent,eol,start
+
 "NeoBundle Scripts-----------------------------
 if has('vim_starting')
   set runtimepath+=~/.config/nvim/bundle/neobundle.vim/
@@ -61,6 +76,8 @@ call neobundle#begin(expand('~/.config/nvim/bundle'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+" Helper for syntax
+NeoBundle 'vim-syntastic/syntastic'
 " Cool file tree like Sublime
 NeoBundle 'scrooloose/nerdtree'
 " Cool tab integration for cool file tree
@@ -69,19 +86,37 @@ NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'Indent-Guides'
 " Hilight matching tags
 NeoBundle 'valloric/MatchTagAlways'
+" massive code completion
+NeoBundle 'Valloric/YouCompleteMe'
+" rust language integration
+NeoBundle 'rust-lang/rust.vim'
 " easily comment lines
 NeoBundle 'scrooloose/nerdcommenter'
 " Auto close HTML tags
-NeoBundle 'alvan/vim-closetag'
+" NeoBundle 'alvan/vim-closetag'
+" typescript and .tsx syntax
+NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
+
+NeoBundle 'Quramy/tsuquyomi'
+" javascript utils
 NeoBundle 'pangloss/vim-javascript'
 " ES7 plugin
-NeoBundle 'othree/yajs.vim'
+" NeoBundle 'othree/yajs.vim'
 
-NeoBundle 'mxw/vim-jsx'
+" NeoBundle 'mxw/vim-jsx'
 " Some stuff I left in from the default neobundle installation
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'tpope/vim-fugitive'
+" NeoBundle 'Shougo/neosnippet.vim'
+" NeoBundle 'Shougo/neosnippet-snippets'
+" NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'flazz/vim-colorschemes'
 
 " Required:
