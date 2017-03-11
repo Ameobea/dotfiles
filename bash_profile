@@ -3,6 +3,7 @@ export PATH
 export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="~/.local/bin:$PATH"
+export PATH="/opt/anaconda/bin:$PATH"
 
 # Misc exports
 export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
@@ -65,3 +66,12 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # set higher user limits, mostly so core files are created on crash
 ulimit -c 4064
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/casey/google-cloud-sdk/path.bash.inc' ]; then source '/home/casey/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/casey/google-cloud-sdk/completion.bash.inc' ]; then source '/home/casey/google-cloud-sdk/completion.bash.inc'; fi
+
+# added by Anaconda3 4.3.1 installer
+export PATH="/opt/anaconda/bin:$PATH"
