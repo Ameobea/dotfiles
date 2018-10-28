@@ -68,7 +68,7 @@ set backspace=indent,eol,start
 
 "NeoBundle Scripts-----------------------------
 if has('vim_starting')
-  set runtimepath+=~/.config/nvim/bundle/neobundle.vim/
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 call neobundle#begin(expand('~/.config/nvim/bundle'))

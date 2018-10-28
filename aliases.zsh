@@ -13,7 +13,6 @@ alias 2dotfiles="cd ~/dotfiles"
 alias cb="cargo build"
 alias cr="cargo run"
 alias cdoc="cargo rustdoc --open -- --no-defaults --passes collapse-docs --passes unindent-comments --passes strip-priv-imports"
-alias nightlies="curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly"
 
 # ASM
 asmcompfunc() {
@@ -37,28 +36,10 @@ ytmp3fn() {
 }
 alias ytmp3=ytmp3fn
 
-# mount ssd iso
-ssdmountfunc() {
-  sudo mount -o loop,ro,offset=368050176 $1 $2
-}
-alias ssdmount=ssdmountfunc
-
-perfukfunc() {
-  perf stat -e instructions:u,instructions:k $1
-}
-alias perfuk=perfukfunc
-
 gdrive_find_func() {
   gdrive list --query "name contains '$1'"
 }
 alias gdrive_find=gdrive_find_func
-
-# Osu
-osufunc() {
-env WINEDEBUG=-all WINEPREFIX='/home/casey/Wine Prefixes/osu!' wine '/home/casey/Wine Prefixes/osu!/drive_c/users/casey/Local Settings/Application Data/osu!/osu!.exe'
-}
-alias osu=osufunc
-alias 2osu="cd /home/casey/Wine\ Prefixes/osu\!/drive_c/users/casey/Local\ Settings/Application\ Data/osu\!/Songs/"
 
 function mkcd {
   mkdir $1
@@ -81,4 +62,25 @@ gpg() {
   else
     command gpg "$@"
   fi
+}
+
+# ameotrack shortcuts
+at() {
+  ameotrack "$@"
+}
+
+atu() {
+  ameotrack upload "$@"
+}
+
+atup() {
+  ameotrack upload -p "$@"
+}
+
+atuo() {
+  ameotrack upload -o "$@"
+}
+
+remind() {
+  ameotrack remind "$@"
 }
