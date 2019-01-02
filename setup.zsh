@@ -26,3 +26,15 @@ curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.s
 pip3 uninstall -y phost ameotrack
 pip3 install --user "git+https://github.com/Ameobea/phost.git#egg=phost&subdirectory=client"
 pip3 install --user "git+https://github.com/Ameobea/misc_scripts.git#egg=ameotrack&subdirectory=ameotrack"
+ln -sf `which ameotrack` /usr/local/bin/ameotrack
+
+# Install flameshot wrapper for Ameotrack
+screenshot_filename="$HOME/.local/bin/screenshot"
+curl https://raw.githubusercontent.com/Ameobea/misc_scripts/master/screenshot > $screenshot_filename
+chmod +x $screenshot_filename
+
+# Install commonly used Rust utilities
+cargo install -f exa
+cargo install -f du-dup
+cargo install -f fd-find
+cargo install -f dutree
